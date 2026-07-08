@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MediBondhu — AI-Driven Healthcare Guidance Platform
 
-## Getting Started
+**Live:** https://medibondhu.vercel.app
 
-First, run the development server:
+SciBlitz AI Challenge 2026 | Team AI104 (Solo Innovator) | Track A — Health & Society
 
+## Problem
+In rural Bangladesh, patients don't know which specialist to see. They waste consultations, delay treatment, and have no private channel for mental health crises.
+
+## Solution
+Describe your symptoms in Bengali, Banglish, or English. Gemini AI triages you into one of three outcomes:
+- **Primary Guidance** — safe home-care advice for minor complaints
+- **Specialist Referral** — the right doctor type + matched directory
+- **Emergency Support** — crisis detection + one-tap call to helpline 1222
+
+The AI detects your language and replies in it.
+
+## Tech Stack
+- Next.js 16 (App Router) + Tailwind CSS
+- Next.js API Routes (server-side, keeps API key secure)
+- Google Gemini 2.5 Flash via official SDK
+- Deployed on Vercel
+
+## How AI Works
+Structured prompt engineering forces the LLM to return strict JSON (`type`, `message`, `specialist`). The `type` field drives the entire UI. The `specialist` field is constrained to English so a Bengali conversation can drive an English directory lookup.
+
+## Run Locally
 ```bash
+npm install
+# create .env.local with: GEMINI_API_KEY=your_key
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Disclaimer
+Preliminary guidance only. Not a substitute for a qualified doctor. Doctor records are synthetic placeholders.
