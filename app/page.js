@@ -42,8 +42,8 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-gray-600 dark:text-slate-400 mt-5 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Tell us how you feel, in Bengali or English. Our AI will guide you,
-            find the right doctor, or connect you to emergency help — instantly.
+            Tell us how you feel, in English, Bangla or Benglish. Our AI will guide you,
+            find the right doctor, or connect you to emergency help — right away.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">

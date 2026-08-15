@@ -113,9 +113,10 @@ export default function ChatPage() {
             AI Chat
           </h1>
           <p className="text-gray-600 dark:text-slate-400 mt-3 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Tell us how you feel, in Bengali or English. Our AI will guide you
-            or connect you to emergency help.
+           Tell us how you feel, in English, Bangla or Benglish. Our AI will guide you,
+            find the right doctor, or connect you to emergency help — right away.
           </p>
+          
         </header>
 
         <section
