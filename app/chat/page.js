@@ -17,6 +17,7 @@ import {
 import { findDoctors } from "../data/doctors";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import CallButton from "../components/CallButton";
 
 export default function ChatPage() {
   const [message, setMessage] = useState("");
@@ -75,10 +76,6 @@ export default function ChatPage() {
     setLoading(false);
   };
 
-  const callNumber = (number) => {
-    window.location.href = "tel:" + number;
-  };
-
   const getCardStyle = (type) => {
     if (type === "emergency")
       return "bg-red-50 border-red-500 dark:bg-red-950/40 dark:border-red-500";
@@ -113,10 +110,9 @@ export default function ChatPage() {
             AI Chat
           </h1>
           <p className="text-gray-600 dark:text-slate-400 mt-3 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-           Tell us how you feel, in English, Bangla or Benglish. Our AI will guide you,
-            find the right doctor, or connect you to emergency help — right away.
+            Tell us how you feel, in Bengali or English. Our AI will guide you
+            or connect you to emergency help.
           </p>
-          
         </header>
 
         <section
@@ -219,13 +215,14 @@ export default function ChatPage() {
             )}
 
             {response.type === "emergency" && (
-              <button
-                onClick={() => callNumber("1222")}
+              <CallButton
+                number="1222"
+                label="National Emergency Helpline"
                 className="mt-6 w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl shadow-md transition active:scale-[0.99] text-lg flex items-center justify-center gap-2"
               >
                 <Phone size={19} />
                 Call Helpline 1222 Now
-              </button>
+              </CallButton>
             )}
           </section>
         )}
@@ -273,12 +270,13 @@ export default function ChatPage() {
                       </p>
                     </div>
 
-                    <button
-                      onClick={() => callNumber(doc.phone)}
+                    <CallButton
+                      number={doc.phone}
+                      label={doc.name}
                       className="mt-3 w-full bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold py-2.5 rounded-lg transition active:scale-[0.98] flex items-center justify-center gap-1.5"
                     >
                       <Phone size={13} /> Call {doc.phone}
-                    </button>
+                    </CallButton>
                   </div>
                 ))}
               </div>

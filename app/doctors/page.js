@@ -4,12 +4,9 @@ import { Phone, Building2, MapPin, Star, UserRound } from "lucide-react";
 import { doctors } from "../data/doctors";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import CallButton from "../components/CallButton";
 
 export default function DoctorsPage() {
-  const callNumber = (number) => {
-    window.location.href = "tel:" + number;
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
       <Navbar />
@@ -66,12 +63,13 @@ export default function DoctorsPage() {
                     </p>
                   </div>
 
-                  <button
-                    onClick={() => callNumber(doc.phone)}
+                  <CallButton
+                    number={doc.phone}
+                    label={doc.name}
                     className="mt-3 w-full bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold py-2.5 rounded-lg transition active:scale-[0.98] flex items-center justify-center gap-1.5"
                   >
                     <Phone size={13} /> Call {doc.phone}
-                  </button>
+                  </CallButton>
                 </div>
               ))}
             </div>

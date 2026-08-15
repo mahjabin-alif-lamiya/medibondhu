@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MessageCircleMore, Bot, UserCheck, ArrowRight, Phone } from "lucide-react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import CallButton from "./components/CallButton";
 
 const HOW_IT_WORKS = [
   {
@@ -42,8 +43,9 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-gray-600 dark:text-slate-400 mt-5 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Tell us how you feel, in English, Bangla or Benglish. Our AI will guide you,
-            find the right doctor, or connect you to emergency help — right away.
+            Tell us how you feel, in English, Bangla or Benglish. Our AI will
+            guide you, find the right doctor, or connect you to emergency
+            help - right away.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -54,13 +56,14 @@ export default function Home() {
               Check My Symptoms
               <ArrowRight size={20} />
             </Link>
-            <a
-              href="tel:1222"
+            <CallButton
+              number="1222"
+              label="National Emergency Helpline"
               className="w-full sm:w-auto bg-white dark:bg-slate-900 border-2 border-red-200 dark:border-red-900 hover:border-red-400 text-red-600 dark:text-red-400 font-bold px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all active:scale-[0.99] text-lg flex items-center justify-center gap-2"
             >
               <Phone size={19} />
               Emergency Call
-            </a>
+            </CallButton>
           </div>
         </header>
 
