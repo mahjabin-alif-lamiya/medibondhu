@@ -29,7 +29,7 @@ export default function Navbar() {
               MediBondhu
             </p>
             <p className="text-[10px] text-gray-500 dark:text-slate-400 leading-tight hidden sm:block">
-              Health For Everyone
+              Healthcare For Everyone
             </p>
           </div>
         </Link>
